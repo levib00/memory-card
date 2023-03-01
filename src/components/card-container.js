@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Card } from './cards'
+import cardContainerCSS from '../styles/card-container.module.css'
 
 export const CardContainer = (props) => {
   const heroArray = [
@@ -94,10 +95,13 @@ export const CardContainer = (props) => {
   }
 
   return (
-    <div>
-      {heroes.map(listItem => {
-        return <Card clickFunc={clickFunc} incrementScore={props.incrementScore} listItem={listItem} image={listItem.img} hero={listItem.hero} key={listItem.hero}/>
-      })}
+  
+    <div className={cardContainerCSS.gridContainer}>
+      <div className={cardContainerCSS.cardGrid}>
+        {heroes.map(listItem => {
+          return <Card clickFunc={clickFunc} incrementScore={props.incrementScore} listItem={listItem} image={listItem.img} hero={listItem.hero} key={listItem.hero}/>
+        })}
+      </div>
     </div>
   )
 }

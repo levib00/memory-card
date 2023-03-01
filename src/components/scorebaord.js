@@ -1,8 +1,9 @@
 import React from 'react'
+import ScoreboardCSS from '../styles/scoreboard.module.css'
 
 export const ScoreBoard = (props) => {
   return (
-    <div>
+    <div  className={ScoreboardCSS.scoreboard}>
       <div>
         score: {props.score}
       </div>
